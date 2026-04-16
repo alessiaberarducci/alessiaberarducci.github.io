@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alessia — research page in causal machine learning, fairness, and data science." />
+  <title>ALESSIA | SYSTEM DATA</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --line-color: #000000;
+      --text-color: #000000;
+      --muted-text: #333333;
+      --sans-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --mono-font: "Courier New", Courier, monospace;
+      --max-width: 1500px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--sans-font);
+      margin: 0;
+      padding: 4vw;
+      line-height: 1.4;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .blueprint-container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      background-color: var(--line-color);
+      border: 2px solid var(--line-color);
+      gap: 1px;
+    }
+
+    .cell {
+      background-color: var(--bg-color);
+      padding: 2rem;
+      min-width: 0;
+    }
+
+    
+
+    .panel.active {
+      display: block;
+    }
+
+    .header-cell {
+      grid-column: 1 / 13;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      padding: 3rem 2rem;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 10vw, 12rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.82;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .surname {
+      display: block;
+      font-size: clamp(1.2rem, 2vw, 2rem);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      margin-top: 0.3rem;
+      font-family: var(--mono-font);
+    }
+
+    .meta-data {
+      font-family: var(--mono-font);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      text-align: right;
+      max-width: 320px;
+    }
+
+    h2 {
+      font-family: var(--mono-font);
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 0 0 2rem 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-cell {
+      grid-column: 1 / 4;
+      font-family: var(--mono-font);
+      font-size: 0.95rem;
+    }
+
+    .nav-list,
+    .link-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-list li,
+    .link-list li {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--line-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .nav-list li:last-child,
+    .link-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .main-cell {
+      grid-column: 4 / 9;
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+    }
+
+    .statement {
+      font-weight: bold;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+    }
+
+    .pub-cell {
+      grid-column: 9 / 13;
+    }
+
+    .pub-item {
+      margin-bottom: 2rem;
+    }
+
+    .pub-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .pub-year {
+      font-family: var(--mono-font);
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .pub-title {
+      font-weight: bold;
+      font-size: 1.15rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .pub-desc {
+      font-size: 1rem;
+      color: var(--muted-text);
+    }
+
+    .projects-cell {
+      grid-column: 1 / 8;
+    }
+
+    .contact-cell {
+      grid-column: 8 / 13;
+      font-family: var(--mono-font);
+      font-size: 0.95rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line-color);
+      border: 1px solid var(--line-color);
+    }
+
+    .project-card {
+      background: var(--bg-color);
+      padding: 1.2rem;
+    }
+
+    .project-card h3 {
+      margin: 0 0 0.6rem 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      margin: 0;
+      color: var(--muted-text);
+    }
+
+    .footer-cell {
+      grid-column: 1 / 13;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--mono-font);
+      padding: 1.5rem 2rem;
+    }
+
+    a {
+      color: var(--text-color);
+      text-decoration: none;
+      background-color: var(--bg-color);
+      padding: 0.2rem 0.5rem;
+      border: 1px solid var(--text-color);
+      transition: all 0.1s linear;
+      text-transform: uppercase;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    a:hover,
+    a:focus-visible {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+      outline: none;
+    }
+
+    .inline-link {
+      margin-top: 0;
+      margin-right: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    
+
+    
+
+    .small-note {
+      display: block;
+      margin-top: 1rem;
+      color: var(--muted-text);
+      font-size: 0.9rem;
+      font-family: var(--sans-font);
+    }
+
+    @media (max-width: 1100px) {
+      .nav-cell { grid-column: 1 / 5; }
+      .main-cell { grid-column: 5 / 13; }
+      .pub-cell { grid-column: 1 / 13; }
+      .projects-cell { grid-column: 1 / 13; }
+      .contact-cell { grid-column: 1 / 13; }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+
+      .cell {
+        padding: 1.25rem;
+      }
+
+      .header-cell,
+      .footer-cell {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .meta-data {
+        text-align: left;
+      }
+
+      .nav-cell,
+      .main-cell,
+      .pub-cell,
+      .projects-cell,
+      .contact-cell {
+        grid-column: 1 / 13;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      p {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <div class="blueprint-container">
+      <header class="cell header-cell">
+        <div>
+          <h1>
+            Alessia
+            <span class="surname">Berarducci</span>
+          </h1>
+        </div>
+        <div class="meta-data">
+          Sys. Loc: Lugano, Ticino, CH<br />
+          Track: Causal ML / Fairness / AI<br />
+          Status: PhD Candidate / Statistical Computing Lab
+        </div>
+      </header>
+
+      <aside id="profile" class="cell nav-cell">
+        <h2>Profile</h2>
+        <ul class="nav-list">
+          <li><strong>Institution:</strong> USI / Università della Svizzera italiana</li>
+          <li><strong>Background:</strong> Statistics, Mathematics, Computational Science</li>
+          <li><strong>Focus:</strong> Causal inference, fairness, robust ML</li>
+          <li><strong>Current Work:</strong> PhD in Computational Science, Statistical Computing Lab</li>
+        </ul>
+        <a href="mailto:alessia.berarducci@usi.ch">Get in touch</a>
+        
+      </aside>
+
+      <main id="research" class="cell main-cell">
+        <h2>Research</h2>
+        <p class="statement">This is what I'm currently working on.</p>
+        <p>
+          I study how to build models that stay reliable when the data changes across environments.
+        </p>
+        <p>
+          In particular, I focus on causal regularization under distribution shifts, aiming to obtain stable and robust predictions even when we do not observe a clean reference setting.
+        </p>
+      </main>
+
+      <section id="publications" class="cell pub-cell">
+        <h2>Publications</h2>
+
+        <div class="pub-item">
+          <span class="pub-year">[ LOADING ]</span>
+          <div class="pub-title">Fetching publications...</div>
+          <div class="pub-desc">System initializing. Entries will be displayed once available.</div>
+        </div>
+
+      </section>
+
+      <section id="modules" class="cell projects-cell">
+        <h2>Work</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>Research</h3>
+            <p>Causal regularization, shifted environments, and robust out-of-sample prediction under distribution shifts.</p>
+          </article>
+          <article class="project-card">
+            <h3>Teaching</h3>
+            <p>Experience as teaching assistant and tutor in statistics, probability, and graphical models.</p>
+          </article>
+          <article class="project-card">
+            <h3>Code</h3>
+            <p>Research workflows spanning R, Python, simulation, empirical analysis, and reproducible experimentation.</p>
+          </article>
+          
+        </div>
+      </section>
+
+      <section id="links" class="cell contact-cell">
+        <h2>Links</h2>
+        <ul class="link-list">
+          <li><strong>GitHub:</strong> github.com/aleberas</li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alessia-berarducci" target="_blank" rel="noreferrer">alessia-berarducci</a></li>
+          <li><strong>Google Scholar:</strong> Loading...</li>
+                  </ul>
+        <a class="inline-link" href="https://github.com/aleberas" target="_blank" rel="noreferrer">Open GitHub</a>
+        <a class="inline-link" href="CV__Alessia.pdf" target="_blank" rel="noreferrer">Open CV</a>
+        
+      </section>
+
+      <footer class="cell footer-cell">
+        <div>&copy; 2026 ALESSIA</div>
+        <div></div>
+      </footer>
+    </div>
+  </div>
+  
+</body>
+</html>
