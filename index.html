@@ -119,17 +119,15 @@
     .nav-list li,
     .link-list li {
       margin-bottom: 1rem;
-      border-bottom: 1px solid var(--line-color);
       padding-bottom: 0.5rem;
+      border-bottom: none; /* remove global line */
     }
+    
 
-    .nav-list li:last-child,
-    .link-list li:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
+    .nav-list .label {
+      border-bottom: 1px solid var(--line-color);
     }
-
-    .main-cell {
+        .main-cell {
       grid-column: 4 / 9;
     }
 
