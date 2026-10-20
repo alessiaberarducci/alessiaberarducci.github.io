@@ -7,11 +7,11 @@ window.academicContent = {
   // Event types: "Talk", "Poster", "Conference", "Summer school".
   // Optional categories array lets one entry appear under multiple filters.
   events: [
-    {date: "24–25 August 2026", type: "Talk", categories: ["Talk", "Poster"], title: "Causal Regularization for Robust Prediction", venue: "European Meeting of Statisticians (EMS)", location: "", url: "https://www.ems26.org/program"},
+    {date: "24–25 August 2026", type: "Talk", categories: ["Talk", "Poster"], title: "European Meeting of Statisticians (EMS)", venue: "European Meeting of Statisticians (EMS)", location: "Lugano, Switzerland", url: "https://www.ems26.org/program"},
     {date: "July 2026", type: "Poster", categories: ["Poster", "Summer school"], title: "Bocconi-StatML Summer School", venue: "Bocconi-StatML Summer School", location: "Como, Italy", details: "", url: ""},
     {date: "June 2026", type: "Poster", title: "DSSV2026", venue: "DSSV2026", location: "Trento, Italy", details: "", url: ""},
-    {date: "March 2026", type: "Poster", title: "Causal Regularization under Shifted Heterogeneity", venue: "Swiss Statistics Seminars", location: "Bern, Switzerland", url: ""},
-    {date: "7–9 May 2025", type: "Conference", title: "Conference on Causal Learning and Reasoning (CLeaR)", venue: "CLeaR 2025", location: "Lausanne, Switzerland", details: "", url: "https://www.cclear.cc/2025"},
+    {date: "March 2026", type: "Poster", title: "Swiss Statistics Seminars", venue: "Swiss Statistics Seminars", location: "Bern, Switzerland", url: ""},
+    {date: "7–9 May 2025", type: "Conference", title: "Conference on Causal Learning and Reasoning (CLeaR)", venue: "Conference on Causal Learning and Reasoning (CLeaR)", location: "Lausanne, Switzerland", details: "", url: "https://www.cclear.cc/2025"},
     {date: "March 2025", type: "Conference", title: "Swiss Statistics Seminars", venue: "Swiss Statistics Seminars", location: "Bern, Switzerland", details: "", url: ""}
   ],
   courses: [
